@@ -1,0 +1,4 @@
+maxapi==1.0.0
+aiosqlite>=0.22
+python-dotenv>=1.0
+reportlab>=4.0
