@@ -1,7 +1,7 @@
 # SergD_max-lead-bot
 
 Лидогенерирующий бот в мессенджере **MAX** (max.ru) для форума «Педагоги России».
-Написан на Python 3.10+ за ~2 дня, развёрнут к мероприятию с 2000 участников.
+Собран на Python 3.10+ **за 3 часа** — от чистого листа до продакшен-деплоя к мероприятию с 2000 участников.
 
 ---
 
@@ -133,7 +133,7 @@ QR-код / ссылка
 ## 🚀 Быстрый старт
 
 ```bash
-git clone https://github.com/wsgp/SergD_max-lead-bot.git
+git clone https://github.com/wsgp2/SergD_max-lead-bot.git
 cd SergD_max-lead-bot
 
 python3 -m venv .venv
@@ -190,4 +190,7 @@ MIT. Используй, форкай, встраивай.
 
 ## 👤 Автор
 
-[@wsgp](https://github.com/wsgp) · Сделано для «Больших пряничников Урала» 🍪
+**SergD** — Sergei Dyshkant, Senior DevOps & AI Engineer
+📍 Бали · [github.com/wsgp2](https://github.com/wsgp2) · [@sergei_dyshkant](https://t.me/sergei_dyshkant)
+
+Сделано для «Больших пряничников Урала» 🍪
