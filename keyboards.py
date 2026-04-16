@@ -13,10 +13,19 @@ from maxapi.enums.intent import Intent
 import texts
 from config import CHANNEL_URL
 
+NEXT_BUTTON_TEXT = "Далее →"
+
 
 def _ikb(rows: list[list]) -> list[AttachmentButton]:
     """Оборачивает список рядов кнопок в attachment."""
     return [AttachmentButton(type=AttachmentType.INLINE_KEYBOARD, payload=ButtonsPayload(buttons=rows))]
+
+
+def next_welcome() -> list[AttachmentButton]:
+    """Кнопка «Далее →» между первым и вторым экраном приветствия."""
+    return _ikb([
+        [CallbackButton(text=NEXT_BUTTON_TEXT, payload="next_welcome", intent=Intent.POSITIVE)],
+    ])
 
 
 def main_menu() -> list[AttachmentButton]:

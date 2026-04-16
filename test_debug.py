@@ -191,7 +191,7 @@ def test_texts() -> None:
         check(f"no old typo '{bad}'", not found, f"still in: {found}" if found else "")
 
     # Required tokens
-    for token in ["ПЕДАГОГ20", "ПЕДАГОГ30", "Большие пряничники", "мастер-класс"]:
+    for token in ["мастер-класс", "промокод"]:
         present = any(
             token in getattr(texts, n) for n in dir(texts)
             if isinstance(getattr(texts, n, None), str)
@@ -203,7 +203,7 @@ def test_texts() -> None:
 
     # Format-call substitution works
     a = texts.form_done_branch_a("Елена")
-    check("form_done_branch_a inserts name", "Елена" in a and "ПЕДАГОГ20" in a)
+    check("form_done_branch_a inserts name", "Елена" in a and "15%" in a)
     b = texts.form_done_branch_b("Мария")
     check("form_done_branch_b inserts name", "Мария" in b)
 

@@ -80,9 +80,8 @@ def _log_task_result(task: asyncio.Task) -> None:
 async def on_bot_started(event: BotStarted) -> None:
     await event.bot.send_message(
         chat_id=event.chat_id,
-        text=texts.WELCOME,
-        attachments=kb.main_menu(),
-        format=TextFormat.MARKDOWN,
+        text=texts.WELCOME_1,
+        attachments=kb.next_welcome(),
     )
 
 
@@ -91,9 +90,8 @@ async def on_start(event: MessageCreated, context: MemoryContext) -> None:
     await context.set_state(None)
     await context.set_data({})
     await event.message.answer(
-        text=texts.WELCOME,
-        attachments=kb.main_menu(),
-        format=TextFormat.MARKDOWN,
+        text=texts.WELCOME_1,
+        attachments=kb.next_welcome(),
     )
 
 
@@ -102,6 +100,18 @@ async def on_menu(event: MessageCreated, context: MemoryContext) -> None:
     await context.set_state(None)
     await event.message.answer(
         text="Выберите, что вам интересно 👇",
+        attachments=kb.main_menu(),
+    )
+
+
+# ---------- Welcome page 2 → menu ----------
+
+
+@router.message_callback(F.callback.payload == "next_welcome")
+async def cb_next_welcome(event: MessageCallback) -> None:
+    await event.bot.send_message(
+        user_id=event.from_user.user_id,
+        text=texts.WELCOME_2,
         attachments=kb.main_menu(),
     )
 
